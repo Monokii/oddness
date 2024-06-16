@@ -13,7 +13,7 @@ body {
     height: 100px;
     background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #d4a5a5, #a6e3e9, #6fa3ef);
     background-size: 200% 200%;
-    border-radius: 10px;
+    border-radius: 10000px;
     position: absolute;
     animation: gradientShift 5s infinite linear;
 }
