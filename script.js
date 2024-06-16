@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(moveBlock);
     }
 
+    window.addEventListener('resize', () => {
+        if (posX > window.innerWidth - block.clientWidth) {
+            posX = window.innerWidth - block.clientWidth;
+        }
+        if (posY > window.innerHeight - block.clientHeight) {
+            posY = window.innerHeight - block.clientHeight;
+        }
+    });
+
     block.style.transform = `translate(${posX}px, ${posY}px)`;
     requestAnimationFrame(moveBlock);
 });
