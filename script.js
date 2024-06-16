@@ -1,15 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     const block = document.querySelector('.block');
-    let direction = 1;
+    let posX = Math.random() * (window.innerWidth - block.clientWidth);
+    let posY = Math.random() * (window.innerHeight - block.clientHeight);
+    let velocityX = 2;
+    let velocityY = 2;
 
     function moveBlock() {
-        const maxWidth = window.innerWidth - block.clientWidth;
-        const maxHeight = window.innerHeight - block.clientHeight;
-        let posX = Math.random() * maxWidth;
-        let posY = Math.random() * maxHeight;
+        posX += velocityX;
+        posY += velocityY;
+
+        if (posX <= 0 || posX >= window.innerWidth - block.clientWidth) {
+            velocityX = -velocityX;
+        }
+        if (posY <= 0 || posY >= window.innerHeight - block.clientHeight) {
+            velocityY = -velocityY;
+        }
 
         block.style.transform = `translate(${posX}px, ${posY}px)`;
+        requestAnimationFrame(moveBlock);
     }
 
-    setInterval(moveBlock, 2000);
+    block.style.transform = `translate(${posX}px, ${posY}px)`;
+    requestAnimationFrame(moveBlock);
 });
