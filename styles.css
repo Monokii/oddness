@@ -11,10 +11,10 @@ body {
 .block {
     width: 100px;
     height: 100px;
-    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #d4a5a5, #a6e3e9);
-    background-size: 200% 200%;
+    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #d4a5a5, #a6e3e9, #6fa3ef);
+    background-size: 300% 300%;
     border-radius: 10px;
-    animation: gradientShift 10s infinite linear, fadeInOut 5s infinite alternate;
+    animation: gradientShift 10s infinite cubic-bezier(0.16, 0.69, 0.52, 0.83), fadeInOut 5s infinite alternate;
 }
 
 @keyframes gradientShift {
