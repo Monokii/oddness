@@ -14,7 +14,8 @@ body {
     background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871, #d4a5a5, #a6e3e9, #6fa3ef);
     background-size: 200% 200%;
     border-radius: 10px;
-    animation: gradientShift 5s infinite linear, fadeInOut 7s infinite alternate, expand 7s infinite alternate;
+    position: absolute;
+    animation: gradientShift 5s infinite linear;
 }
 
 @keyframes gradientShift {
@@ -23,30 +24,5 @@ body {
     }
     100% {
         background-position: 100% 50%;
-    }
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes expand {
-    0%, 100% {
-        transform: scale(1);
-        border-width: 0;
-    }
-    50% {
-        transform: scale(10);
-        border-width: 10px;
-        border-color: transparent;
-        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
     }
 }
